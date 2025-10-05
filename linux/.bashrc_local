@@ -1,0 +1,19 @@
+# Linux-specific bash configuration
+
+# Add user bin to PATH
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Linux-specific aliases
+alias update='sudo apt update && sudo apt upgrade'
+alias install='sudo apt install'
+
+# Enable programmable completion features
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi

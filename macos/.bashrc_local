@@ -1,0 +1,20 @@
+# macOS-specific bash configuration
+
+# Add Homebrew to PATH if installed
+if [ -d "/opt/homebrew/bin" ]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+fi
+
+# macOS-specific aliases
+alias update='brew update && brew upgrade'
+alias install='brew install'
+
+# Use GNU ls if available (from coreutils)
+if command -v gls &> /dev/null; then
+    alias ls='gls --color=auto'
+fi
+
+# Enable bash completion if installed via Homebrew
+if [ -f /opt/homebrew/etc/bash_completion ]; then
+    . /opt/homebrew/etc/bash_completion
+fi
