@@ -1,6 +1,22 @@
 #!/usr/bin/env zsh
 
+
+# The order of loading
+# 1. ~/.zsh/.zprofile
+# 2. ~/.zsh/.zshrc
+# 3. ~/.zshrc_env
+# 4. ~/.zshrc_private
+
+###################
+# Check .zprofile #
+###################
+if [[ -z $(alias | grep zsh_pr_loaded) ]]; then
+  source $ZDOTDIR/.zprofile
+fi
+
 sed -e 's/:/\n/g' <(echo "$PATH")
+
+
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
