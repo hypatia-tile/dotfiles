@@ -1,15 +1,12 @@
 # zsh configuration
 
-expected .zshrc file:
-```zsh
-#!/usr/bin/env zsh
+This directory take ZDOTDIR approach to store zsh configuration files in a separate location.
 
-export ZDOTDIR="${HOME}/.zsh"
+Zsh allows you to set a single environment variable telling it where to find all its startup files.
 
-if [ -d "${ZDOTDIR}" ] && [ -f "${ZDOTDIR}/.zshrc" ]; then
-  echo "read from ${HOME}/.zsh"
-  source "${HOME}/.zsh/.zshrc"
-else
-  source "${HOME}/.zshrc.local"
-fi
+In your `.zshenv` (the only file Zsh always reads, even in login shells):
+```bash
+export ZDOTDIR=$HOME/.zsh
 ```
+
+Then you can put your `.zshrc`, `.zprofile`, `.zlogin`, `.zlogout`, and `.zshenv` files in this directory.

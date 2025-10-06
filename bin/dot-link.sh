@@ -11,7 +11,7 @@ if [ "$yesno" != "y" ]; then
     exit 0
 fi
 
-dotfiles_dir="${HOME}/dotfiles"
+dotfiles_dir="${HOME}/.dotfiles"
 
 echo "Removing dotfiles under $HOME"
 cat "${dotfiles_dir}/bin/target.txt" | xargs -I {} rm -rf "${HOME}/{}" \
@@ -22,7 +22,3 @@ echo "starting linking dotfiles"
 cat "${dotfiles_dir}/bin/target.txt" | xargs -I {} ln -s "${dotfiles_dir}/{}" "${HOME}/{}" \
     && echo "Linked dotfiles successfully" \
     || { echo "Failed to link dotfiles"; exit 1; }
-
-
-
-
