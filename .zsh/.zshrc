@@ -16,11 +16,6 @@ fi
 
 sed -e 's/:/\n/g' <(echo "$PATH")
 
-
-
-# Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
-
 plugins=(git)
 # Set locale
 export LANG=en_US.UTF-8
