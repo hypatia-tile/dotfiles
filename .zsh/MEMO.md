@@ -6,7 +6,7 @@
 
 ## Alias for xdg-open
 
-in `.zprofile`:
+in `.zshenv`:
 
 ```bash
 alias x='xdg-open'
