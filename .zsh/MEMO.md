@@ -26,4 +26,4 @@ For example:
 * Running `xdg-open file.pdf` will open `file.pdf` in the default PDF viewer.
 * Running `xdg-open https://www.example.com` will open the website in your default web browser.
 
-It works as a universal "open" command, similar to `open` on macOS or `start` on Windows, making it easier to open files and links from scripts or the terminal without needing to know the specifc application to use.
+It works as a universal "open" command, similar to `open` on macOS or `start` on Windows, making it easier to open files and links from scripts or the terminal without needing to know the specific application to use.
