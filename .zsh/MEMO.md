@@ -16,7 +16,7 @@ This creates a shell alias named `x` that runs the command `xdg-open`.
 ## Purpose:
 This makes it quicker and easier to open files or URLs from the command line.
 Instead of typing `xdg-open <file-or-url>`, you can just type `x <file-or-url>`.
-The `xdg-open` command opens a file or URL in the user's prefferred application (for example, a PDF in the default viewer or a website in the default browser).
+The `xdg-open` command opens a file or URL in the user's preferred application (for example, a PDF in the default viewer or a website in the default browser).
 
 `xdg-open` is a command-line utility available on many Linux and Unix-like systems.
 Its primary purpose is to open a file or URL in the user's preferred application, as defined by the desktop environment.
