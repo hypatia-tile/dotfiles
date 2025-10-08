@@ -21,7 +21,15 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@14/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="$HOME/script:$PATH"
-export PATH=$(stack path --compiler-bin --silent):$PATH
+
+# To add the stack compiler bin to your PATH, run: add_stack_compiler_bin_to_path
+add_stack_compiler_bin_to_path() {
+  local stack_bin
+  stack_bin=$(stack path --compiler-bin --silent 2>/dev/null)
+  if [[ -n "$stack_bin" && ":$PATH:" != *":$stack_bin:"* ]]; then
+    export PATH="$stack_bin:$PATH"
+  fi
+}
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
