@@ -14,40 +14,16 @@ if [[ -z $(alias | grep zsh_profile_loaded) ]]; then
   source $ZDOTDIR/.zprofile
 fi
 
+# Load modular configurations
+for module in $ZDOTDIR/modules/*.zsh; do
+  [[ -f $module ]] && source $module
+done
+
 sed -e 's/:/\n/g' <(echo "$PATH")
 
 plugins=(git)
 
-# >>> Add additional paths to the PATH environment variable. >>>
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.ghcup/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH="$JAVA_HOME/bin:$PATH"
-# Created by `pipx` on 2024-07-21 06:03:30
-export PATH="$HOME/.local/bin:$PATH"
-# add path to postgresql
-export PATH="/opt/homebrew/opt/postgresql@14/bin:$PATH"
-# add path to SWI Prolog
-export PATH="/opt/homebrew/Cellar/swi-prolog/9.2.6/bin:$PATH"
-# add path to wildfly
-export Path="$HOME/wildfly/wildfly-34.0.0.Beta1/bin:$PATH"
-# add path to llvm
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-
-# add path to script
-export PATH="$HOME/script:$PATH"
-# <<< Add additional paths to the PATH environment variable. <<<
-
-alias ll="ls -lah"
-alias code='open -a /Applications/Visual\ Studio\ Code.app'
-export PATH=$(stack path --compiler-bin --silent):$PATH
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
-
+# TODO: Move functions to a separate module file later
 function take_note () {
   local note_dir="$HOME/work/notes/diary"
   local note_file="$note_dir/$(date +"note%Y%m%d.adoc")"
@@ -70,4 +46,4 @@ function take_note () {
   fi
 }
 
-export PAGER=less
+alias zsh_rc_loaded='echo "zsh_rc_loaded"'
