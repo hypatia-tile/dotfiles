@@ -44,4 +44,4 @@ echo "read .zprofile from ${HOME}/.zsh"
 #######################
 # Mark as loaded file #
 #######################
-alias zsh_pr_loaded='echo "zsh_profile_loaded"'
+alias zsh_profile_loaded='echo "zsh_profile_loaded"'
