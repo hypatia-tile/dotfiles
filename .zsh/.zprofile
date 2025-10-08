@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# Configure environment variables without any plusings
+# Configure environment variables without any plugins
 
 # Set the zsh variables
 ZDOTDIR="${HOME}/.zsh"
