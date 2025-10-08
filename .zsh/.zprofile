@@ -28,7 +28,6 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
-export PATH=$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
