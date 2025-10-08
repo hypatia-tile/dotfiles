@@ -27,3 +27,16 @@ For example:
 * Running `xdg-open https://www.example.com` will open the website in your default web browser.
 
 It works as a universal "open" command, similar to `open` on macOS or `start` on Windows, making it easier to open files and links from scripts or the terminal without needing to know the specific application to use.
+
+## Git LFS
+
+To install Git LFS (Large File Storage) on your system, you can follow these steps:
+1. **Install Git LFS**:
+   - On macOS, you can use Homebrew:
+     ```bash
+     brew install git-lfs
+     ```
+   - On Linux, you can use your package manager. For example, on Ubuntu:
+     ```bash
+     sudo apt install git-lfs
+     ```
