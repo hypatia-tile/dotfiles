@@ -10,32 +10,19 @@
 ###################
 # Check .zprofile #
 ###################
-if [[ -z $(alias | grep zsh_pr_loaded) ]]; then
+if [[ -z $(alias | grep zsh_profile_loaded) ]]; then
   source $ZDOTDIR/.zprofile
 fi
 
 sed -e 's/:/\n/g' <(echo "$PATH")
 
 plugins=(git)
-# Set locale
-export LANG=en_US.UTF-8
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-
-# >>> My settings >>>
 # >>> Add additional paths to the PATH environment variable. >>>
 export PATH="/usr/local/bin:$PATH"
-# Haskell setting
 export PATH="$HOME/.ghcup/bin:$PATH"
-# path to homebrew
 export PATH="/opt/homebrew/bin:$PATH"
-# path to nodebrew
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
-
-# Java setting
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH="$JAVA_HOME/bin:$PATH"
@@ -54,15 +41,8 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="$HOME/script:$PATH"
 # <<< Add additional paths to the PATH environment variable. <<<
 
-# Add aliases
 alias ll="ls -lah"
-# vsCode setting
 alias code='open -a /Applications/Visual\ Studio\ Code.app'
-
-# sdk manager
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
-
 export PATH=$(stack path --compiler-bin --silent):$PATH
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
