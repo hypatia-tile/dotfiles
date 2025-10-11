@@ -15,7 +15,7 @@
 ---     - Set `bufhidden="hide"` so when the last window closes, the buffer
 ---       stays alive in memory → your edits persist across toggles.
 ---   * Centering & sizing:
----     - We raed UI size (editor grid) and compute width/height.
+---     - We read UI size (editor grid) and compute width/height.
 ---     - If width/height are in (0,1), treat as rations; otherwise as cells.
 ---
 ---   Usage
