@@ -132,3 +132,15 @@ fi
 alias vboxutils="bash $HOME/scripts/vboxutils.sh"
 
 eval "$(direnv hook bash)"
+
+alias q="exit"
+alias reload="source ~/.bashrc"
+alias rel="reload"
+
+# Git: Create and checkout a new branch named "work/YYYYMMDD_HHMMSS"
+gcwb() {
+  git checkout -b "work/$(date +%Y%m%d_%H%M%S)"
+  if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to create and checkout new branch." >&2
+  fi
+}
