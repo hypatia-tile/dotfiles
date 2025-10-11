@@ -125,7 +125,9 @@ fi
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
 
 # Load Angular CLI autocompletion.
-. <(ng completion script)
+if command -v ng >/dev/null 2>&1; then
+  . <(ng completion script)
+fi
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # Alias for VBoxmanage util scripts
