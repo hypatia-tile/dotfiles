@@ -94,7 +94,7 @@ local function get_or_create_buf(name)
   return bufnr
 end
 
----Open a buffer in a centered floaating window with minimal chrome.
+---Open a buffer in a centered floating window with minimal chrome.
 ---@param buf integer
 ---@param opts table|nil
 ---@return integer winid
