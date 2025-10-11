@@ -1,0 +1,7 @@
+# Git utilities
+# Provides completion for git utilities
+# Usage: source this file in your .zshrc or .zprofile
+
+gcwb() {
+  git checkout -b "work/$(date +%Y%m%d_%H%M%S)"
+}
