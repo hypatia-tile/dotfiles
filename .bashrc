@@ -126,7 +126,7 @@ fi
 
 # Load Angular CLI autocompletion.
 . <(ng completion script)
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # Alias for VBoxmanage util scripts
 alias vboxutils="bash $HOME/scripts/vboxutils.sh"
