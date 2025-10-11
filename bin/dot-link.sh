@@ -29,6 +29,6 @@ cat "${dotfiles_dir}/bin/configtarget.txt" | xargs -I {} rm -rf "${HOME}/.config
     || { echo "Failed to remove config files under $HOME/.config"; exit 1; }
 
 echo "starting linking config files"
-cat "${dotfiles_dir}/bin/configtarget.txt" | xargs -I {} ln -s "${dotfiles_dir}/config/{}" "${HOME}/.config/{}" \
+cat "${dotfiles_dir}/bin/configtarget.txt" | xargs -I {} ln -s "${dotfiles_dir}/.config/{}" "${HOME}/.config/{}" \
     && echo "Linked config files successfully" \
     || { echo "Failed to link config files"; exit 1; }
