@@ -21,7 +21,19 @@ done
 
 sed -e 's/:/\n/g' <(echo "$PATH")
 
-plugins=(git)
+autoload -U colors
+if [[ $? -eq 0 ]]; then
+  colors
+fi
+autoload -U compinit
+if [[ $? -eq 0 ]]; then
+  compinit
+fi
+autoload -U bashcompinit
+if [[ $? -eq 0 ]]; then
+  bashcompinit
+fi
+
 
 # TODO: Move functions to a separate module file later
 function take_note () {
