@@ -4,4 +4,7 @@
 
 gcwb() {
   git checkout -b "work/$(date +%Y%m%d_%H%M%S)"
+  if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to create and checkout new branch." >&2
+  fi
 }
