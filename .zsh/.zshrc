@@ -21,19 +21,12 @@ done
 
 sed -e 's/:/\n/g' <(echo "$PATH")
 
-autoload -U colors
-if [[ $? -eq 0 ]]; then
-  colors
-fi
-autoload -U compinit
-if [[ $? -eq 0 ]]; then
-  compinit
-fi
-autoload -U bashcompinit
-if [[ $? -eq 0 ]]; then
-  bashcompinit
-fi
+autoload -Uz colors && colors
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit && bashcompinit
 
+# Autoload user defined completion functions
+autoload -Uz gitutils && gitutils
 
 # TODO: Move functions to a separate module file later
 function take_note () {
