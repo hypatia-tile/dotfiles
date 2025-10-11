@@ -25,7 +25,7 @@
 ---
 ---   OPTIONS (all optional)
 ---     opts.width  number  - ratio (0-1) or absolute cells (>=1). Default 0.8
----     opts.height nubmer  - ratio (0-1) or absolute cells (>=1). Default 0.8
+---     opts.height number  - ratio (0-1) or absolute cells (>=1). Default 0.8
 ---     opts.border string  - "rounded" (default), "single", "double", "none", ...
 ---     opts.title  string  - floating window title
 ---
