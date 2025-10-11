@@ -16,7 +16,7 @@
 ---       stays alive in memory → your edits persist across toggles.
 ---   * Centering & sizing:
 ---     - We read UI size (editor grid) and compute width/height.
----     - If width/height are in (0,1), treat as rations; otherwise as cells.
+---     - If width/height are in (0,1), treat as ratios; otherwise as cells.
 ---
 ---   Usage
 ---     require("float_note").toggle({ width = 0.6, height = 0.5, title = "Note" })
