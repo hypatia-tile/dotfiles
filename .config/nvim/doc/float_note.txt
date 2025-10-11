@@ -2,7 +2,7 @@
 USAGE
   :FloatNote
   :FloatNote {width} {height}
-      Open/close a centered floatiing scratch note.
+      Open/close a centered floating scratch note.
       {width}/{height} can be ratios (0-1) or absolute cells (>=1).
 
 MAPPING
