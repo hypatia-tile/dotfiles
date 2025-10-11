@@ -1,5 +1,5 @@
 # Git utilities
-# Provides completion for git utilities
+# Provides utility functions for git
 # Usage: source this file in your .zshrc or .zprofile
 
 gcwb() {
