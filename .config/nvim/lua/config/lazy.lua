@@ -21,7 +21,6 @@ require("lazy").setup {
     -- import/override with your plugins
     { import = "plugins.catppuccin" },
     { import = "plugins.completion" },
-    { import = "plugins.dev" },
     { import = "plugins.lsp-config" },
     { import = "plugins.lualine" },
     { import = "plugins.neo-tree" },
