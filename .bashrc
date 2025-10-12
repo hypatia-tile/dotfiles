@@ -32,8 +32,8 @@ fi
 # Platform specific clipboard setup {{{
 if [ "Linux" = "$(uname)" ]; then
   if command -v xclip >/dev/null 2>&1; then
-	alias pbcopy='xclip -selection clipboard c'
-	alias pbpaste='xclip -selection clipboard c -o'
+	alias pbcopy='xclip -selection clipboard'
+	alias pbpaste='xclip -selection clipboard -o'
   else
 	echo "Warning: xclip not found. Clipboard functionality will be limited."
 	echo "You can install it via: sudo apt install xclip"
