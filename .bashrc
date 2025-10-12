@@ -1,6 +1,8 @@
 #!/usr/bin/bash
-export PATH="/usr/bin:$PATH"
-export PATH="/snap/bin:$PATH"
+
+if [[ -z $(alias | grep bash_profile_loaded) ]]; then
+  source ~/.bash_profile
+fi
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
