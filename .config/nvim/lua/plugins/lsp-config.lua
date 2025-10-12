@@ -17,13 +17,19 @@ return {
       "mason-org/mason.nvim",
       "mason-org/mason-lspconfig.nvim",
     },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
+      -- Add GHCup binaries to PATH for Haskell tools
+      vim.env.PATH = vim.fn.expand "~/.ghcup/bin" .. ":" .. vim.env.PATH
+      local ghcup_hls = vim.fn.expand "~/.ghcup/bin/haskell-language-server-wrapper"
+
       local lspconfig = require "lspconfig"
+
       require("mason").setup()
       local mlsp = require "mason-lspconfig"
       mlsp.setup {
         -- It's OK to keep rust_analyzer here: this only installs the binary.
-        ensure_installed = { "lua_ls", "clangd" },
+        ensure_installed = { "lua_ls", "clangd", "hls" },
         automatic_installation = true,
       }
 
@@ -53,6 +59,30 @@ return {
             lspconfig.lua_ls.setup {
               capabilities = capabilities,
               settings = { Lua = { diagnostics = { globals = { "vim" } } } },
+            }
+          end,
+          ["hls"] = function()
+            lspconfig.hls.setup {
+              cmd = { ghcup_hls, "--lsp" },
+              filetypes = { "haskell", "lhaskell", "cabal" },
+              capabilities = capabilities,
+              settings = {
+                haskell = {
+                  formattingProvider = "fourmolu",
+                  checkProject = true,
+                  cabalFormattingProvider = "cabalfmt",
+                },
+              },
+              on_attach = function(client, bufnr)
+                if client.server_capabilities.documentFormattingProvider then
+                  vim.api.nvim_create_autocmd("BufWritePre", {
+                    buffer = bufnr,
+                    callback = function()
+                      vim.lsp.buf.format { async = false }
+                    end,
+                  })
+                end
+              end,
             }
           end,
         }
