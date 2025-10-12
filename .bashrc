@@ -1,45 +1,45 @@
 #!/usr/bin/bash
 
-if [[ -z $(alias | grep bash_profile_loaded) ]]; then
-  source ~/.bash_profile
-fi
-
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
+# Define interactive bash shell behavior {{{
 # If not running interactively, don't do anything
 case $- in
 	*i*) ;;
 	  *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
+if [[ -z $(alias | grep bash_profile_loaded) ]]; then
+  source ~/.bash_profile
+fi
+# }}}
+# Shell options {{{
 # append to the history file, don't overwrite it
 shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+#}}}
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 	debian_chroot=$(cat /etc/debian_chroot)
 fi
+
+# Platform specific clipboard setup {{{
+if [ "Linux" = "$(uname)" ]; then
+  if command -v xclip >/dev/null 2>&1; then
+	alias pbcopy='xclip -selection clipboard c'
+	alias pbpaste='xclip -selection clipboard c -o'
+  else
+	echo "Warning: xclip not found. Clipboard functionality will be limited."
+	echo "You can install it via: sudo apt install xclip"
+  fi
+fi
+#}}}
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
