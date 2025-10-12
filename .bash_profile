@@ -1,6 +1,8 @@
 #!/bin/bash
 
 export HISTCONTROL=ignoreboth
+# HISTFILESIZE is set larger than HISTSIZE so that more history is preserved across sessions
+# than is available in a single session. This allows for a longer persistent history.
 export HISTFILESIZE=2000
 export HISTIGNORE="*.bash_history*:*mount*-o*password=*"
 export HISTSIZE=1000
