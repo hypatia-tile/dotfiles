@@ -1,9 +1,13 @@
 #!/bin/bash
 
-export ZDOTDIR=~/.zsh
-export HISTSIZE=10000
-export HISTTIMEFORMAT='%Y/%m/%d %H:%M '
+export HISTCONTROL=ignoreboth
+# HISTFILESIZE is set larger than HISTSIZE so that more history is preserved across sessions
+# than is available in a single session. This allows for a longer persistent history.
+export HISTFILESIZE=2000
 export HISTIGNORE="*.bash_history*:*mount*-o*password=*"
+export HISTSIZE=1000
+export HISTTIMEFORMAT='%Y/%m/%d %H:%M '
+export ZDOTDIR=~/.zsh
 
 # Export PATHs
 export PATH="/usr/bin:$PATH"
