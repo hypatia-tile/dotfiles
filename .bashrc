@@ -146,4 +146,3 @@ gcwb() {
 	fi
 }
 
-source ~/.ghcup/env
