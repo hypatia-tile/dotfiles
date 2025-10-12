@@ -5,13 +5,14 @@ return {
   build = ":TSUpdate",
   opts = {
     ensure_installed = {
+      "bibtex",
       "c",
-      "rust",
+      "cmake",
+      "haskell",
       "lua",
       "markdown",
       "markdown_inline",
-      "cmake",
-      "bibtex",
+      "rust",
     },
     highlight = {
       disable = {
