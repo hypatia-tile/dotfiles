@@ -24,6 +24,13 @@ sed -e 's/:/\n/g' <(echo "$PATH")
 autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 autoload -Uz bashcompinit && bashcompinit
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT='${vcs_info_msg_0_}'
+# PROMPT='${vcs_info_msg_0_}%# '
+zstyle ':vcs_info:git:*' formats '%b'
 
 # Autoload user defined completion functions
 autoload -Uz gitutils && gitutils
