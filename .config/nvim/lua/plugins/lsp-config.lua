@@ -31,7 +31,7 @@ return {
       }
 
       local capabilities = require("blink.cmp").get_lsp_capabilities()
-      -- Try mason-lspconfig's setup_handlers if present; otherwise fall back.
+      -- Use mason-lspconfig's setup_handlers when available; no manual fallback is provided.
       local ok = (type(mlsp.setup_handlers) == "function")
       if ok then
         mlsp.setup_handlers {
