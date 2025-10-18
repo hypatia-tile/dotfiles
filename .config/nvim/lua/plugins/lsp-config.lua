@@ -23,8 +23,6 @@ return {
       vim.env.PATH = vim.fn.expand "~/.ghcup/bin" .. ":" .. vim.env.PATH
       local ghcup_hls = vim.fn.expand "~/.ghcup/bin/haskell-language-server-wrapper"
 
-      local lspconfig = require "lspconfig"
-
       require("mason").setup()
       local mlsp = require "mason-lspconfig"
       mlsp.setup {
@@ -40,7 +38,7 @@ return {
         if server == "rust_analyzer" then
           return -- avoid conflict with rustaceanvim
         end
-        lspconfig[server].setup {
+        vim.lsp.config[server] = {
           capabilities = capabilities,
           -- on_attach = function(client, bufnr) ... end,
           -- settings = { ... },
@@ -56,13 +54,13 @@ return {
           end,
           -- per-server overrides as needed:
           ["lua_ls"] = function()
-            lspconfig.lua_ls.setup {
+            vim.lsp.config.lua_ls = {
               capabilities = capabilities,
               settings = { Lua = { diagnostics = { globals = { "vim" } } } },
             }
           end,
           ["hls"] = function()
-            lspconfig.hls.setup {
+            vim.lsp.config.hls = {
               cmd = { ghcup_hls, "--lsp" },
               filetypes = { "haskell", "lhaskell", "cabal" },
               capabilities = capabilities,
