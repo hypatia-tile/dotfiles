@@ -26,25 +26,11 @@ return {
       require("mason").setup()
       local mlsp = require "mason-lspconfig"
       mlsp.setup {
-        -- It's OK to keep rust_analyzer here: this only installs the binary.
         ensure_installed = { "lua_ls", "clangd", "hls" },
         automatic_installation = true,
       }
 
       local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-      -- One place to customize all servers
-      local function setup_server(server)
-        if server == "rust_analyzer" then
-          return -- avoid conflict with rustaceanvim
-        end
-        vim.lsp.config[server] = {
-          capabilities = capabilities,
-          -- on_attach = function(client, bufnr) ... end,
-          -- settings = { ... },
-        }
-      end
-
       -- Try mason-lspconfig's setup_handlers if present; otherwise fall back.
       local ok = (type(mlsp.setup_handlers) == "function")
       if ok then
@@ -85,10 +71,6 @@ return {
           end,
         }
       else
-        -- Fallback for builds where setup_handlers is missing
-        for _, server in ipairs(mlsp.get_installed_servers()) do
-          setup_server(server)
-        end
       end
     end,
   },
