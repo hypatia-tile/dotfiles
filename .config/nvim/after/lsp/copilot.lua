@@ -31,6 +31,7 @@ return {
           if vim.fn.pumvisible() == 1 then
             return "<c-e>"
           end
+          return ''
         end, { silent = true, expr = true, buffer = bufnr })
 
         vim.keymap.set("i", "<c-f>", function()
