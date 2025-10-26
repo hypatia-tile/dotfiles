@@ -26,7 +26,7 @@ return {
       require("mason").setup()
       local mlsp = require "mason-lspconfig"
       mlsp.setup {
-        ensure_installed = { "lua_ls", "clangd", "hls" },
+        ensure_installed = { "lua_ls", "clangd", "hls", "copilot" },
         automatic_installation = true,
       }
 
