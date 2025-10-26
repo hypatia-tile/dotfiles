@@ -10,6 +10,7 @@ return {
   settings = {
     haskell = {
       cabalFormattingProvider = "cabalfmt",
+      -- NOTE: Formatting provider changed from 'fourmolu' to 'ormolu'.
       formattingProvider = "ormolu",
     },
   },
