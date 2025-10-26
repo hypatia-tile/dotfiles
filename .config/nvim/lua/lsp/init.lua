@@ -7,7 +7,7 @@ for file, ftype in vim.fs.dir(lspdir) do
     local lsp_name = file:sub(1, -5) -- fname without '.lua'
     local ok, result = pcall(require, "lsp." .. lsp_name)
     if ok then
-      vim.lsp.config(lsp_name, result) -- e.g. vim.lsp.config("lua_ls", { ... wrritten in lsp/lua_ls,lya ... })
+      vim.lsp.config(lsp_name, result) -- e.g. vim.lsp.config("lua_ls", { ... written in lsp/lua_ls,lua ... })
       table.insert(lsp_names, lsp_name)
     else
       vim.notify("Error loading LSP: " .. lsp_name .. "\n" .. result, vim.log.levels.WARN)
