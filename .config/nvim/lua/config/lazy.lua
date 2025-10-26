@@ -23,8 +23,6 @@ require("lazy").setup {
     { import = "plugins.completion" },
     { import = "plugins.lsp-config" },
     { import = "plugins.lualine" },
-    { import = "plugins.neo-tree" },
-    { import = "plugins.none-ls" },
     { import = "plugins.telescope" },
     { import = "plugins.tex" },
     { import = "plugins.treesitter" },
