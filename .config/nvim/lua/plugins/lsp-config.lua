@@ -13,6 +13,6 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    lazy = true, -- Only load when needed as a dependency
+    lazy = true, -- Only load when needed as a dependency (triggered by lsp/init.lua or specific LSP server configs)
   },
 }
