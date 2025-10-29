@@ -17,7 +17,7 @@ return {
     end
   end,
   on_init = function()
-    -- If there exists a complition item accept it, otherwise fallback to tab
+    -- If there exists a completion item accept it, otherwise fallback to tab
     vim.keymap.set("i", '<tab>', function()
       if not vim.lsp.inline_completion.get() then
         return '<tab>'
