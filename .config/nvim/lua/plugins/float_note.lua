@@ -1,6 +1,4 @@
 --- User-facing command/keymap for float_note (auto-sourced on start).
---- Files under plugin/*.lua are loaded automatically by Neovim.
-
 vim.api.nvim_create_user_command("FloatNote", function(opts)
   local w = tonumber(opts.fargs[1])
   local h = tonumber(opts.fargs[2])
