@@ -23,7 +23,7 @@ return {
         return '<tab>'
       end
     end, { expr = true })
-    -- TODO: investigate about higlight groups in a namespace
+    -- TODO: investigate about highlight groups in a namespace
     local hlc = vim.api.nvim_get_hl(0, { name = "Comment" })
     vim.api.nvim_set_hl(0, "ComplHint", vim.tbl_extend("force", hlc, { underline = true }))
     local hlm = vim.api.nvim_get_hl(0, { name = "MoreMsg" })
