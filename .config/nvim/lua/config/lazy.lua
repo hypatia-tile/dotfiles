@@ -28,6 +28,7 @@ require("lazy").setup {
     { import = "plugins.treesitter" },
     { import = "plugins.rustaceanvim" },
     { import = "plugins.bap" },
+    { import = "plugins.autopairs" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
