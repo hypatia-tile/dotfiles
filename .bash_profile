@@ -17,3 +17,4 @@ export PATH=$PATH:/opt/gradle/gradle-8.10.2/bin
 export PATH="$PATH:$HOME/neovim/bin"
 
 alias bash_profile_loaded='echo "bash_profile_loaded"'
+export PATH="$HOME/.elan/bin:$PATH"
