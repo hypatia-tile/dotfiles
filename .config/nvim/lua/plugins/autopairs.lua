@@ -5,6 +5,10 @@ return {
     opts = {
       mappings = {
         ["'"] = false,
+        ["\""] = false,
+        ["`"] = false,
+        ["{"] = false,
+        ["("] = false,
       }
     }
   },
