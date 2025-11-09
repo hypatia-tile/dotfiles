@@ -19,8 +19,6 @@ for module in $ZDOTDIR/modules/*.zsh; do
   [[ -f $module ]] && source $module
 done
 
-sed -e 's/:/\n/g' <(echo "$PATH")
-
 autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 autoload -Uz bashcompinit && bashcompinit

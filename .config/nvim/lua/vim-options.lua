@@ -9,3 +9,7 @@ vim.opt.relativenumber = true
 vim.opt.hlsearch = true
 vim.opt.clipboard:append("unnamedplus,unnamed")
 vim.g.tex_flavor = "latex" -- Open .tex files in LaTeX mode
+
+vim.opt.termguicolors = true
+vim.opt.winblend = 0 -- transparency for window
+vim.opt.pumblend = 0 -- transparency for popup menu
