@@ -3,6 +3,7 @@ require "vim-options"
 require "config.lazy"
 require "plugins.float_note"
 require "shino.commands"
+require "lsp.init"
 -- Color schems and highlights settings
 require("catppuccin").setup({
   flavour = "mocha",
