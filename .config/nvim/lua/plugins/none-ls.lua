@@ -2,7 +2,7 @@ return {
   {
     "nvimtools/none-ls.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "vim-test/vim-test" },
-    opt = {},
+    opts = {},
   },
   {
     "jay-babu/mason-null-ls.nvim",
