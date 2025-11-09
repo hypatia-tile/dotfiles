@@ -31,6 +31,7 @@ local plugins = {
   { import = "plugins.rustaceanvim" },
   { import = "plugins.bap" },
   { import = "plugins.autopairs" },
+  { import = "plugins.none-ls" },
 }
 
 local opts = {
