@@ -19,7 +19,7 @@ return {
     vim.api.nvim_set_hl(0, 'ComplHint', vim.tbl_extend('force', hlc, { underline = true }))
     local hlm = vim.api.nvim_get_hl(0, { name = 'MoreMsg' })
     vim.api.nvim_set_hl(0, 'ComplHintMore', vim.tbl_extend('force', hlm, { underline = true }))
-    -- enable 
+    -- Enable inline completion via LspAttach autocmd
     vim.api.nvim_create_autocmd('LspAttach', {
       callback = function(args)
         local bufnr = args.buf
