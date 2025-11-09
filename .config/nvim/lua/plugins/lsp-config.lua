@@ -11,4 +11,14 @@ return {
       }
     end,
   },
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = { "copilot" },
+    },
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+  },
 }
