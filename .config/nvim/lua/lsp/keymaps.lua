@@ -6,6 +6,10 @@ function M.lsp_keymap(bufnr)
 
   -- Basics
   map("n", "K", vim.lsp.buf.hover, "LSP: Hover")
+  map("n", "<leader>gd", function()
+    vim.cmd "belowright split"
+    vim.lsp.buf.definition()
+  end, "LSP: Go to definition (vsplit)")
   map("n", "gd", vim.lsp.buf.definition, "LSP: Go to definition")
   map("n", "gD", vim.lsp.buf.declaration, "LSP: Go to declaration")
   map("n", "gi", vim.lsp.buf.implementation, "LSP: Go to implementation")
