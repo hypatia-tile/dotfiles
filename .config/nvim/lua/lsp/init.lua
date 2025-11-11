@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd("FileType", {
         filetypes = ts_filetypes,
         root_dir = root_dir,
         -- handlers = {
-        --   ["textDocument/publishDiagnostics"] = vim.lsp.diabnostic.on_publish_diagnostics,
+        --   ["textDocument/publishDiagnostics"] = vim.lsp.diagnostic.on_publish_diagnostics,
         -- },
       }
       vim.lsp.config("ts_ls", ts_opts)
