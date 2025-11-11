@@ -7,7 +7,7 @@ vim.opt.shiftwidth = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.hlsearch = true
-vim.opt.clipboard:append("unnamedplus,unnamed")
+vim.opt.clipboard:append "unnamedplus,unnamed"
 vim.g.tex_flavor = "latex" -- Open .tex files in LaTeX mode
 
 vim.opt.termguicolors = true

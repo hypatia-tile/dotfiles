@@ -5,7 +5,7 @@ require "plugins.float_note"
 require "shino.commands"
 require "lsp.init"
 -- Color schemes and highlights settings
-require("catppuccin").setup({
+require("catppuccin").setup {
   flavour = "mocha",
   color_overrides = {
     mocha = {
@@ -15,17 +15,16 @@ require("catppuccin").setup({
     },
   },
   transparent_background = true,
-})
-vim.cmd.colorscheme("catppuccin-mocha")
-vim.cmd("highlight TelescopeSelection cterm=bold gui=bold guifg=#a6e3a1 guibg=#181825")
+}
+vim.cmd.colorscheme "catppuccin-mocha"
+vim.cmd "highlight TelescopeSelection cterm=bold gui=bold guifg=#a6e3a1 guibg=#181825"
 -- toggle transparency
 vim.keymap.set("n", "<leader>tp", function()
-  local cat = require("catppuccin")
+  local cat = require "catppuccin"
   cat.options.transparent_background = not cat.options.transparent_background
   cat.compile()
-  vim.cmd.colorscheme("catppuccin-mocha")
+  vim.cmd.colorscheme "catppuccin-mocha"
 end)
-
 
 -- Folding settings
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
