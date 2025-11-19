@@ -33,6 +33,10 @@ zstyle ':vcs_info:git:*' formats '%b'
 # Autoload user defined completion functions
 autoload -Uz gitutils && gitutils
 
+export EDITOR=nvim
+eval "$(direnv hook zsh)"
+
+
 # TODO: Move functions to a separate module file later
 function take_note () {
   local note_dir="$HOME/work/notes/diary"
