@@ -32,7 +32,7 @@ local plugins = {
   { import = "plugins.bap" },
   { import = "plugins.autopairs" },
   { import = "plugins.none-ls" },
-  { import = "plugins.confirm" },
+  { import = "plugins.conform" },
 }
 
 local opts = {
