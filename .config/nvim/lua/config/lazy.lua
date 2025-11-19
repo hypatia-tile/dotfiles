@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out,                            "WarningMsg" },
+      { out, "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -18,7 +18,7 @@ local plugins = {
   -- add LazyVim and import its plugins
   {
     "LazyVim/LazyVim",
-    import = "lazyvim.plugins"
+    import = "lazyvim.plugins",
   },
   -- import/override with your plugins
   { import = "plugins.catppuccin" },
@@ -32,11 +32,12 @@ local plugins = {
   { import = "plugins.bap" },
   { import = "plugins.autopairs" },
   { import = "plugins.none-ls" },
+  { import = "plugins.confirm" },
 }
 
 local opts = {
-  root = vim.fn.stdpath("data") .. "/lazy",
-  lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json",
+  root = vim.fn.stdpath "data" .. "/lazy",
+  lockfile = vim.fn.stdpath "config" .. "/lazy-lock.json",
   concurrency = 10,
   checker = { enabled = true },
   log = { level = "info" },

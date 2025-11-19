@@ -1,4 +1,4 @@
 return {
-  cmd = "rnix-lsp",
+  cmd = { "nil" },
   filetypes = { "nix" },
 }
