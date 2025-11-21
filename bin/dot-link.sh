@@ -11,7 +11,7 @@ if [ "$yesno" != "y" ]; then
     exit 0
 fi
 
-dotfiles_dir="${HOME}/.dotfiles"
+dotfiles_dir="$(pwd)"
 
 echo "Removing dotfiles under $HOME"
 cat "${dotfiles_dir}/bin/target.txt" | xargs -I {} rm -rf "${HOME}/{}" \
