@@ -75,6 +75,15 @@ The script performs two types of symlinking:
 - Custom completions in `.zsh/complete/`
 - `direnv` integration for per-directory environments
 - Custom function: `take_note` - Opens daily AsciiDoc note file
+- **zsh-abbr**: Fish-style command abbreviations (installed via Homebrew, symlinked to `~/.local/bin/`)
+  - Press Space after abbreviation to expand (e.g., `gs` → `git status`)
+  - Abbreviations defined in `.config/zsh/abbr-definitions.zsh`
+  - `abbr list` - List all abbreviations
+  - `abbr add <key>=<expansion>` - Add new abbreviation
+  - `abbr erase <key>` - Remove abbreviation
+  - `abbr-reload` - Reload abbreviations from `abbr-definitions.zsh` after editing
+  - Edit `abbr-definitions.zsh` to manage permanent abbreviations, then run `abbr-reload`
+  - See https://zsh-abbr.olets.dev/ for full documentation
 
 **PATH Management** (.zsh/.zprofile:18-44):
 - Explicitly constructed PATH (not appending)
