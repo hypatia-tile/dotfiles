@@ -67,3 +67,10 @@ bindkey -M vicmd '^R' redo
 
 # VI_MODE variable is set by zle-keymap-select and zle-line-init
 # and is used in PROMPT in .zshrc
+
+# Re-apply zsh-abbr Space keybinding after vi mode setup
+# The 'bindkey -v' command above resets all keybindings to vi defaults
+# We need to restore the abbr expansion on Space
+if (( ${+widgets[abbr-expand-and-insert]} )); then
+  bindkey " " abbr-expand-and-insert
+fi
