@@ -32,7 +32,7 @@ white = "0xabb2bf"
 [window]
 dynamic_padding = true
 decorations = "Buttonless"
-opacity = 0.90
+opacity = 0.75
 blur = false
 startup_mode = "Windowed"
 
