@@ -3,3 +3,4 @@ alacritty
 kitty
 tmux
 zsh
+aerospace
