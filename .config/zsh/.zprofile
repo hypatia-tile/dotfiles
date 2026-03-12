@@ -11,6 +11,11 @@ export SAVEHIST=1000000000
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64" # Compilation flags
 
+export fpath=($fpath \
+  $ZDOTDIR/complete \
+  $ZDOTDIR/functions \
+)
+
 # PATH environment variable configuration
 # PATH is now managed by nix-darwin via home.sessionPath in ~/github/nix-darwin/nix/home/base.nix
 # For project-specific PATH modifications, use .envrc files with direnv

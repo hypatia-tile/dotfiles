@@ -3,20 +3,20 @@
 # Environment variables (excluding PATH)
 
 # Java configuration
-if [[ "$(uname)" == "Darwin" ]]; then
-  export JAVA_HOME=$(/usr/libexec/java_home)
-else
-  if command -v java >/dev/null 2>&1; then
-    JAVA_HOME_CANDIDATE=$(java -XshowSettings:properties -version 2>&1 | awk -F' = ' '/^\s*java\.home =/ {print $2; exit}')
-    if [[ -n "$JAVA_HOME_CANDIDATE" ]]; then
-      export JAVA_HOME="$JAVA_HOME_CANDIDATE"
-    else
-      echo "Warning: Could not determine JAVA_HOME from 'java -XshowSettings:properties -version'" >&2
-    fi
-  else
-    echo "Warning: 'java' command not found; JAVA_HOME not set." >&2
-  fi
-fi
+# if [[ "$(uname)" == "Darwin" ]]; then
+#   export JAVA_HOME=$(/usr/libexec/java_home)
+# else
+#   if command -v java >/dev/null 2>&1; then
+#     JAVA_HOME_CANDIDATE=$(java -XshowSettings:properties -version 2>&1 | awk -F' = ' '/^\s*java\.home =/ {print $2; exit}')
+#     if [[ -n "$JAVA_HOME_CANDIDATE" ]]; then
+#       export JAVA_HOME="$JAVA_HOME_CANDIDATE"
+#     else
+#       echo "Warning: Could not determine JAVA_HOME from 'java -XshowSettings:properties -version'" >&2
+#     fi
+#   else
+#     echo "Warning: 'java' command not found; JAVA_HOME not set." >&2
+#   fi
+# fi
 
 # Android SDK configuration
 if [[ "$(uname)" == "Darwin" ]]; then

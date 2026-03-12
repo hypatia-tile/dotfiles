@@ -21,6 +21,7 @@ done
 
 autoload -Uz colors && colors
 autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 autoload -Uz bashcompinit && bashcompinit
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
