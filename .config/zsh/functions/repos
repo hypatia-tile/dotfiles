@@ -1,7 +1,7 @@
 function repos() {
   local base_dir="$(ghq root)"
   if [[ -n "${base_dir}" ]] && [ -d "${base_dir}" ]; then
-    local targetrepo=$(fd -H -td  '^\.git$' "${base_dir}" | sed "s/\.git\/$//" \
+    local targetrepo=$(ghq list --full-path \
       | fzf)
     cd $targetrepo
   else

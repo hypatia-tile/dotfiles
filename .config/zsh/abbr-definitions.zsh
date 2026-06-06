@@ -63,9 +63,7 @@ abbr add --quieter tn='tmux new-session'
 abbr add --quieter tnt='tmux new-session -s'
 
 # Neovim abbreviations
-abbr add --quieter v='nvim'
-abbr add --quieter --force vi='nvim'
-abbr add --quieter --force vim='nvim'
+abbr add --quieter v='vim'
 
 # System utilities
 abbr add --quieter reload='source ~/.config/zsh/.zshrc'
