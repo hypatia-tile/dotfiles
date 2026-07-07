@@ -20,10 +20,10 @@
 (global-set-key (kbd "C-x j") #'skk-auto-fill-mode)
 
 ;; Org
-;; (setq org-startup-indented t)
-;; (setq org-hide-emphasis-markers t)
-;; (setq org-startup-with-inline-images t)
-;; (add-hook 'org-mode-hook #'visual-line-mode)
+(setq org-startup-indented t)
+(setq org-hide-emphasis-markers t)
+(setq org-startup-with-inline-images t)
+(add-hook 'org-mode-hook #'visual-line-mode)
 
 ;; Hide the Start Screen (Splash Screen)
 (setq inhibit-startup-screen t)
