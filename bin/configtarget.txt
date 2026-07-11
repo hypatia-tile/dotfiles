@@ -4,3 +4,4 @@ kitty
 tmux
 zsh
 aerospace
+git
